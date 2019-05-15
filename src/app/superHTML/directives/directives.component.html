@@ -1,0 +1,91 @@
+<p><b>*ngFor Example: </b></p>
+Friends: {{ CallTaxis }}
+
+<ol>
+  <li *ngFor="let f of CallTaxis; let counter=index">
+    {{ f }}; Counter Number = {{ counter }}
+    <button (click)="displayText(counter);">click {{ f }}</button>
+  </li>
+</ol>
+<hr>
+
+<div>
+  <P><b>Demo of *ngFor</b></P>
+  <table>
+    <thead>
+      <tr>
+        <td>S.NO.</td>
+        <td>ID</td>
+        <td>NAME</td>
+        <td>CITY</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let f of location; let counter=index">
+        <td>{{ counter + 1 }}</td>
+        <td>{{ f.id }}</td>
+        <td>{{ f.name }}</td>
+        <td>{{ f.city }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<hr>
+
+<div>
+  <table>
+    <thead>
+      <tr>
+          <td>S.NO.</td>
+          <td>ID</td>
+          <td>NAME</td>
+          <td>ZIPCODE</td>
+          <td>LONGITUDE</td>
+          <td>LATITUDE</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let f of MapLocation; let counter=index">
+          <td>{{ counter + 1 }}</td>
+          <td>{{ f.id }}</td>
+          <td>{{ f.username }}</td>          
+          <td>{{ f.address.zipcode }}</td>
+          <td>{{ f.address.geo.lat }}</td>
+          <td>{{ f.address.geo.lng }}</td>
+        </tr>
+      </tbody>
+  </table>
+</div>
+<hr>
+
+<div>
+    <P><b>Demo of *ngIF</b></P>
+    <button (click)="toggleRectangle()">Toggle Visibility</button>
+    <div class="rectangle" *ngIf="RectangleVisibility"></div>
+</div>
+
+<div>
+    <P><b>Demo of *ngIF with ELSE</b></P>
+    <button (click)="toggleRectangleELSE()">Toggle Visibility</button>
+    <div class="rectangle" *ngIf="RectangleVisibilityELSE; else elseRectangle"></div>
+</div>
+
+<ng-template #elseRectangle>
+  <div class="rectangle">Hip hip Hurray</div>
+</ng-template>
+<hr>
+
+<div>
+    <P><b>Demo of *ngSwitchCase</b></P>
+    <div [ngSwitch]="city">
+      <span *ngSwitchCase="044">Chennai</span>
+      <span *ngSwitchCase="033">Kolkatta</span>
+      <span *ngSwitchCase="022">Mumbai</span>
+      <span *ngSwitchCase="011">Delhi</span>
+      <span *ngSwitchDefault>No City</span>
+    </div>
+</div>
+<hr>
+
+
+

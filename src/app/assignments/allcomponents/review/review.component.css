@@ -1,0 +1,29 @@
+.mainDiv{
+    width: 100%;
+    background-color: burlywood;
+    text-align: center;
+    padding: 10px;
+}
+
+.subDiv{
+    width: 100%;
+}
+
+.title{
+    color: blue;
+    text-align: left;
+}
+
+.thumbnail{
+    background-color: cyan;
+    width: 20%;
+    color: blue;
+    float: left;
+}
+
+.description{
+    background-color: cornsilk;
+    width: 80%;
+    color: blue;
+    float: right;
+}

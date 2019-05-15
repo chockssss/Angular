@@ -1,0 +1,13 @@
+h1{
+    color: brown
+}
+
+.logoDiv{
+    float: left;
+    width: 20%;
+}
+
+.navigationDiv{
+    float: right;
+    width: 80%;
+}
