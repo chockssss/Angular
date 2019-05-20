@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router'
+import { FormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +20,13 @@ import { DescriptionComponent } from './assignments/allcomponents/description/de
 import { DirectivesComponent } from './superHTML/directives/directives.component';
 import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
 import { BadrouteComponent } from './ErrorHandling/badroute/badroute.component';
+import { ComsumeParentComponent } from './consume/comsume-parent/comsume-parent.component';
+import { ComsumeChild1Component } from './consume/comsume-child1/comsume-child1.component';
+import { ComsumeChild2Component } from './consume/comsume-child2/comsume-child2.component';
+import { ChildComponent } from './consume/child/child.component';
+import { TemplateformSampleComponent } from './forms/templateform-sample/templateform-sample.component';
+import { ReactiveformSampleComponent } from './forms/reactiveform-sample/reactiveform-sample.component';
+import { Animationsample1Component } from './animation/animationsample1/animationsample1.component';
 
 @NgModule({
   declarations: [
@@ -33,11 +43,21 @@ import { BadrouteComponent } from './ErrorHandling/badroute/badroute.component';
     DescriptionComponent,
     DirectivesComponent,
     PipesDemoComponent,
-    BadrouteComponent
+    BadrouteComponent,
+    ComsumeParentComponent,
+    ComsumeChild1Component,
+    ComsumeChild2Component,
+    ChildComponent,
+    TemplateformSampleComponent,
+    ReactiveformSampleComponent,
+    Animationsample1Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot([{
       path: '',
       redirectTo: 'family',
@@ -80,6 +100,30 @@ import { BadrouteComponent } from './ErrorHandling/badroute/badroute.component';
     {
       path: 'pipes',
       component:PipesDemoComponent
+    },
+    {
+      path: 'consume services',
+      component:ComsumeParentComponent,
+      children:[{
+        path: 'child1',
+        component: ComsumeChild1Component
+      },
+      {
+        path: 'child2',
+        component:ComsumeChild2Component
+      }]
+    },
+    {
+      path: 'template',
+      component: TemplateformSampleComponent
+    },
+    {
+      path: 'reactive',
+      component: ReactiveformSampleComponent
+    },
+    {
+      path: 'animation',
+      component: Animationsample1Component
     },
     {
       path: '**',

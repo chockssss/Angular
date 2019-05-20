@@ -1,0 +1,30 @@
+<p>
+  reactiveform-sample works!
+</p>
+<div>
+  Reactive Form:
+  <br>
+  <br>
+  <form [formGroup]='myForm' (ngSubmit)="SubmitDetails(myForm)">
+    <label>Name : </label>
+    <input type="text" formControlName="fullname"> 
+    <br>
+    <br>
+
+    <label>Age : </label>
+    <input type="number" formControlName="age">
+    <br>
+    <br>
+
+    <label>Hobby : </label>
+    <select formControlName="hobby">
+      <option value="Playing Tennis">Playing Tennis</option>
+      <option value="Swimming">Swimming</option>
+      <option value="Video Games">Video Games</option>
+    </select>
+    <br>
+    <br>
+
+    <button type="submit" [disabled]="myForm.invalid">Submit</button>
+  </form>
+</div>

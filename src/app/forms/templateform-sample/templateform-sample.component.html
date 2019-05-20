@@ -1,0 +1,33 @@
+<p>
+  templateform-sample works!
+</p>
+<div>
+  Template Form:
+  <br>
+  <br>
+  <form #hobbyForm="ngForm" (ngSubmit)="SubmitDetails(hobbyForm)">
+    <label contenteditable="true">Name : </label>
+    <input type="text" name="fullname" [(ngModel)]="full_name" required > {{ full_name }}
+    <span [ngStyle]="{color:hobbyForm.controls.fullname.invalid?'red':'white'}">Should only have alphabets</span>
+    <br>
+    <br>
+
+    <label>Age : </label>
+    <input type="number" name="age" [(ngModel)]="age" required min="18" max="100"> {{ age }}
+    
+    <br>
+    <br>
+
+    <label>Hobby : </label>
+    <select name="hobby" [(ngModel)]="hobby"> 
+      <option value="Playing Tennis">Playing Tennis</option>
+      <option value="Swimming">Swimming</option>
+      <option value="Video Games">Video Games</option>
+    </select>{{ hobby }}
+    <br>
+    <br>
+    <button type="submit" [disabled]="hobbyForm.invalid">Submit</button>
+  </form>
+</div>
+
+<router-outlet></router-outlet>

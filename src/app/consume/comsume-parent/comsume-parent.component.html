@@ -1,0 +1,31 @@
+<p>
+  I am consume Parent!! I have 2 children.
+</p>
+<div>
+  Name of City : {{ NameOfCity }}
+</div>
+<div>
+  Input City Name : <input type="text" [(ngModel)]=NameOfCity>
+</div>
+<br>
+
+<div>
+  <app-child [CityName]="NameOfCity" (sendToParent)="receivedNewName($event)"></app-child>
+</div>
+
+<div>
+  <a routerLink="child1">Child 1</a> &nbsp;
+  <a routerLink="child2">Child 2</a>
+</div>
+
+<!--<div>
+  <ol>
+    <li>
+      I am child 1 -> <app-comsume-child1></app-comsume-child1>  
+    </li>
+    <li>
+        I am child 2-> <app-comsume-child2></app-comsume-child2>  
+      </li>
+  </ol>
+</div>-->
+<router-outlet></router-outlet>
