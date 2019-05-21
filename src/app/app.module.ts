@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router'
 import { FormsModule } from '@angular/forms'
 import { ReactiveFormsModule } from '@angular/forms'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { HttpClientModule} from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +28,7 @@ import { ChildComponent } from './consume/child/child.component';
 import { TemplateformSampleComponent } from './forms/templateform-sample/templateform-sample.component';
 import { ReactiveformSampleComponent } from './forms/reactiveform-sample/reactiveform-sample.component';
 import { Animationsample1Component } from './animation/animationsample1/animationsample1.component';
+import { RestApiSample1Component } from './restAPI/rest-api-sample1/rest-api-sample1.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,8 @@ import { Animationsample1Component } from './animation/animationsample1/animatio
     ChildComponent,
     TemplateformSampleComponent,
     ReactiveformSampleComponent,
-    Animationsample1Component
+    Animationsample1Component,
+    RestApiSample1Component
   ],
   imports: [
     BrowserModule,
@@ -58,6 +61,7 @@ import { Animationsample1Component } from './animation/animationsample1/animatio
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     RouterModule.forRoot([{
       path: '',
       redirectTo: 'family',
@@ -124,6 +128,10 @@ import { Animationsample1Component } from './animation/animationsample1/animatio
     {
       path: 'animation',
       component: Animationsample1Component
+    },
+    {
+      path: 'remote',
+      component: RestApiSample1Component
     },
     {
       path: '**',

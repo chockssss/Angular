@@ -1,0 +1,30 @@
+<p>
+  rest-api-sample1 works!
+</p>
+<div>
+  <ol>
+    <li *ngFor="let u of users">
+      {{u.username}}, {{ u.address.city }}
+    </li>
+  </ol>
+</div>
+<br>
+<br>
+<div>
+  <table>
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>City</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of users">
+        <td>{{u.id}}</td>
+        <td>{{u.username}}</td>
+        <td>{{ u.address.city }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
