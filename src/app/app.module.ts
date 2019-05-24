@@ -29,6 +29,7 @@ import { TemplateformSampleComponent } from './forms/templateform-sample/templat
 import { ReactiveformSampleComponent } from './forms/reactiveform-sample/reactiveform-sample.component';
 import { Animationsample1Component } from './animation/animationsample1/animationsample1.component';
 import { RestApiSample1Component } from './restAPI/rest-api-sample1/rest-api-sample1.component';
+import { EmployeedetailComponent } from './restAPI/employeedetail/employeedetail.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { RestApiSample1Component } from './restAPI/rest-api-sample1/rest-api-sam
     TemplateformSampleComponent,
     ReactiveformSampleComponent,
     Animationsample1Component,
-    RestApiSample1Component
+    RestApiSample1Component,
+    EmployeedetailComponent
   ],
   imports: [
     BrowserModule,
@@ -132,6 +134,10 @@ import { RestApiSample1Component } from './restAPI/rest-api-sample1/rest-api-sam
     {
       path: 'remote',
       component: RestApiSample1Component
+    },
+    {
+      path: 'employeeDetails/:id',
+      component: EmployeedetailComponent
     },
     {
       path: '**',

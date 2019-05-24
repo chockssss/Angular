@@ -2,15 +2,6 @@
   rest-api-sample1 works!
 </p>
 <div>
-  <ol>
-    <li *ngFor="let u of users">
-      {{u.username}}, {{ u.address.city }}
-    </li>
-  </ol>
-</div>
-<br>
-<br>
-<div>
   <table>
     <thead>
       <tr>
@@ -27,4 +18,40 @@
       </tr>
     </tbody>
   </table>
+</div>
+<br>
+<br>
+<div>
+  <button id="btnGetEmployeeDtl" (click)="getEmployeeDetails()">Get Employee Details</button>
+  <br>
+  <table>
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>City</td>
+        <td>Detail</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let e of employee">
+        <td>{{e.id}}</td>
+        <td>{{e.employee_name}}</td>
+        <td>{{e.employee_salary }}</td>
+        <td>
+          <button (click)="getEmployeeByID(e.id)">Get Details</button>
+        </td>
+        <td>
+          <button (click)="deleteEmployeeByID(e.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <div>
+    <label>Name: </label><input type="text" [(ngModel)]="name"><br><br>
+    <label>salary: </label><input type="text" [(ngModel)]="salary"><br><br>
+    <label>age: </label><input type="text" [(ngModel)]="age"> {{age}}<br><br>
+    <button (click)="addEmployee()">Add</button>
+  </div>
 </div>

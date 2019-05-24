@@ -1,0 +1,16 @@
+table{
+    background-color: bisque;
+    border: 1px;
+    border-style: solid;
+}
+
+thead{
+    text-align: center;
+    text-shadow: 1px;
+    color: blue;
+}
+
+td{
+    border: 1px;
+    border-style: solid;
+}
